@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up </title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+        const users = {}
+let initialised = false;
+let currentId = 2;
+
+function userValid(id){
+    console.log(users)
+    if(users[id] !== undefined){
+        if(users[id]?.exist){
+            return true
+        }
+        return false
+    }
+}
+    function createAccount(){
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let button = document.getElementById('accountButton');
+        let result = document.getElementById('resultAccountCreation');
+    
+        button.addEventListener('click', (e)=>{
+            e.preventDefault
+            let newUser = {id:currentId, name: '', balance: 0, exist: false}
+            newUser.name = name;
+            newUser.id = currentId;
+            newUser.balance = 1000;
+            newUser.exist = true;
+            users[currentId] = newUser;
+            currentId += 1;
+    
+        })
+        result.innerText = `user added successfully, user ID is ${currentId} `
+    
+        console.log(users)
+    }
+    </script>
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <form>
+        <label> Name</label>
+        <input type="text" id="name" placeholder="" />
+        <label>Email</label>
+        <input type="text" id="email" placeholder="" />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="" />
+        <button onclick="createAccount()" id="accountButton">submit</button>
+        <p id="resultAccountCreation"></p>
+
+      </form>
+      <p>
+        <a href="#">Terms </a> and <a href="#">condition</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+  </body>
+</html>
+

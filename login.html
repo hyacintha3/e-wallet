@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login </title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+    const users = {}
+let initialised = false;
+let currentId = 2;
+
+function userValid(id){
+    console.log(users)
+    if(users[id] !== undefined){
+        if(users[id]?.exist){
+            return true
+        }
+        return false
+    }
+}
+</script>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form>
+        <label>Email</label>
+       <input type="text" id="email" placeholder="" />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="" />
+        <button onclick="createAccount()" id="accountButton">login</button>
+        <p id="resultAccountCreation"></p>
+      </form>
+    </div>
+    <p class="para-2">
+      Not have an account? <a href="signup.html">Sign Up Here</a>
+    </p>
+    <p class="para-3">
+        Already have an account? <a href="wall.html">wallet here</a>
+      </p>
+  </body>
+</html>
+
+
+
